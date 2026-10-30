@@ -141,6 +141,7 @@ Voir [SECURITY.md](SECURITY.md).
 - [Dépannage](docs/TROUBLESHOOTING.md)
 - [Feuille de route](docs/ROADMAP.md)
 - [Exploitation et tests réalisés](docs/OPERATIONS-AND-TESTS.md)
+- [Accès distant avec ZeroTier et DBeaver](docs/REMOTE-ACCESS-ZEROTIER-DBEAVER.md)
 
 ## À propos
 
