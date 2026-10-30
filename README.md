@@ -149,3 +149,47 @@ Ce projet fait partie de mes travaux pratiques autour de Linux, des bases de don
 
 - **Portfolio :** https://annegaaby.github.io/Anne-Gabrielly/
 - **GitHub :** https://github.com/AnneGaaby
+
+
+## Mise en place réelle du laboratoire
+
+Le serveur a été installé dans une machine virtuelle CentOS 7.9 x86_64. La première configuration de laboratoire utilisait l'image CentOS 7 DVD 2009, une installation minimale, 4 Go de mémoire vive, 2 processeurs virtuels et un disque de 30 Go. Le réseau de la VM a d'abord été configuré en NAT. Ces valeurs décrivent la configuration de départ utilisée pour le laboratoire ; elles ne constituent pas des prérequis universels.
+
+Après l'installation, l'identification du système et de l'architecture se vérifiait avec les commandes Linux habituelles de consultation de version et d'architecture.
+
+Le serveur Talisman était organisé en trois composants distincts : `db_server`, `login_server` et `game_server`. Ils étaient associés aux unités systemd `talisman-db.service`, `talisman-login.service` et `talisman-game.service`. Un service complémentaire `talisman-mysql-socket.service` faisait partie de la séquence de démarrage observée.
+
+## Démarrage et validation observés
+
+La séquence de démarrage testée consistait à préparer le service de socket MySQL, démarrer le service DB Talisman, puis le service de connexion et enfin le service de jeu. Cette organisation respecte les dépendances observées dans le laboratoire ; il faut toujours contrôler l'état réel des unités avant de la réutiliser.
+
+Les vérifications effectuées ont confirmé :
+- le service MariaDB/MySQL actif ;
+- les processus `db_server`, `login_server` et `game_server` présents ;
+- les ports applicatifs attendus en écoute ;
+- la connectivité entre Windows et CentOS via un réseau privé ZeroTier ;
+- une connexion à la base depuis Windows avec DBeaver.
+
+Ces résultats sont des observations faites pendant les tests du laboratoire, pas une garantie de disponibilité permanente. Les adresses privées, l'identifiant ZeroTier, les identifiants SQL et les détails d'accès ne sont volontairement pas reproduits ici.
+
+## Accès à la base et outils d'administration
+
+DBeaver a servi d'interface graphique depuis Windows pour se connecter à MariaDB, parcourir la base et effectuer des vérifications. C'est une compétence utile en administration et en développement backend : elle permet de visualiser les tables, examiner les relations, exécuter des requêtes SQL et diagnostiquer une connexion.
+
+## Ce que j'ai réellement mis en pratique
+
+1. Préparer une machine virtuelle Linux séparée du poste Windows.
+2. Installer et démarrer CentOS 7.9 Minimal.
+3. Installer et vérifier le service MariaDB/MySQL.
+4. Organiser les composants du serveur Talisman en services indépendants.
+5. Utiliser systemd pour contrôler les services.
+6. Vérifier les processus et ports en écoute.
+7. Relier le poste Windows et le serveur Linux dans un réseau privé ZeroTier.
+8. Utiliser DBeaver depuis Windows pour accéder à la base.
+9. Examiner les journaux et diagnostiquer les erreurs de démarrage.
+
+## Pourquoi cette expérience est utile en informatique
+
+Ce laboratoire reproduit des tâches proches de celles rencontrées dans l'administration système et le support infrastructure : installation d'un système, gestion de services, diagnostic de processus, vérification réseau, gestion d'une base SQL, lecture de journaux et séparation des composants applicatifs.
+
+Les mêmes principes sont utilisés dans des environnements hébergeant des sites web, des API, des applications métiers, des plateformes communautaires et des serveurs de jeux.
