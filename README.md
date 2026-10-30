@@ -140,6 +140,7 @@ Voir [SECURITY.md](SECURITY.md).
 - [Guide de laboratoire](docs/LAB-GUIDE.md)
 - [Dépannage](docs/TROUBLESHOOTING.md)
 - [Feuille de route](docs/ROADMAP.md)
+- [Exploitation et tests réalisés](docs/OPERATIONS-AND-TESTS.md)
 
 ## À propos
 
