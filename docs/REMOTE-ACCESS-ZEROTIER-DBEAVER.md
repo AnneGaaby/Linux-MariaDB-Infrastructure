@@ -57,7 +57,7 @@ Une fois les deux appareils connectés et autorisés, ZeroTier attribue une adre
 
 Dans notre cas :
 - le serveur CentOS possédait son adresse IP ZeroTier ;
-- le PC Windows possuía sa propre adresse IP ZeroTier ;
+- le PC Windows possédait sa propre adresse IP ZeroTier ;
 - c'est l'adresse IP ZeroTier de CentOS que nous avons utilisée comme adresse de destination pour joindre le serveur depuis Windows.
 
 Cette adresse est différente de l'adresse IP locale du réseau domestique et de l'adresse publique du routeur. Elle permet aux membres autorisés du réseau virtuel de communiquer même s'ils ne sont pas sur le même réseau physique.
@@ -131,7 +131,7 @@ Après la connexion, DBeaver affiche les bases de données auxquelles le compte 
 - `db_gmtool`
 - `db_log`
 
-Le nom `db_account indique la base associée aux données de comptes. Les autres bases correspondent à des domaines distincts du serveur. Le contenu précis dépend du schéma et de la version des fichiers SQL installés.
+Le nom `db_account` indique la base associée aux données de comptes. Les autres bases correspondent à des domaines distincts du serveur. Le contenu précis dépend du schéma et de la version des fichiers SQL installés.
 
 DBeaver permet notamment de :
 - parcourir les bases et leurs tables ;
